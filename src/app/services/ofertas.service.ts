@@ -36,6 +36,15 @@ export class OfertasService {
     
   }
 
+  getCaracteristica(){
+    return this.getQuey()
+    .pipe(map((data:any) =>
+      { 
+        data.map(data => console.log(data['characteristics']))
+      }
+    )
+    )}
+
 
 
 }

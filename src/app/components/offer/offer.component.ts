@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfertasService } from 'src/app/services/ofertas.service';
+import { Offer } from './Offer';
 
 @Component({
   selector: 'app-offer',
@@ -9,6 +10,7 @@ import { OfertasService } from 'src/app/services/ofertas.service';
 export class OfferComponent   {
 
   ofertas:any[]=[];
+  offerValue:Offer[] = [];
   constructor(private oferta: OfertasService) {
 
     
@@ -29,6 +31,10 @@ export class OfferComponent   {
    }
 
    offerChange(event:any){     
+     this.offerValue = [{
+       id: '01',
+       name: 'holap puto'
+     }]
 
      console.log(event);
    }
