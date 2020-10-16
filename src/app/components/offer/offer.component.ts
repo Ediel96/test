@@ -11,12 +11,28 @@ export class OfferComponent   {
   ofertas:any[]=[];
   constructor(private oferta: OfertasService) {
 
+    
     this.oferta.getOferta()
-      .subscribe((data:any) => {
-          console.log(data)
-      })
+      .subscribe((item:any) => {
+        
+        this.ofertas = item;
+        console.log(this.ofertas);
+      });
+
+    // this.oferta.getOferta()
+    //     .subscribe((item:any) => {
+    //     this.ofertas = item;
+    //     console.log(this.ofertas);
+
+    //   });
 
    }
+
+   offerChange(event:any){     
+
+     console.log(event);
+   }
+
 
 
 

@@ -1,15 +1,25 @@
 <div class="card">
-    <div class="row" *ngFor="let oferta of ofertas">
+  <select  class="m-5"name="" id="" [(ngModel)]="ofertas" (change)="offerChange($event)">
+      <option *ngFor="let oferta of ofertas" [ngValue]="oferta[0].id" #Offer>
+          {{oferta[0].name}}
+      </option>
+  </select> 
+  
+  <div class="row" >
       <div class="col-2">
-        {{ofertas.id}}
+        <p class="text-dark">ID OFERTA:</p>                    
       </div>
-      <div class="col-2">
-        <input type="text">
-      </div>
+      <div class="col-2"></div>
+        <!-- <p>{{ofertas}}</p>         -->
     </div>
     <div class="row">
-      <div class="col-2">teste</div>
+      <div class="col-2">NOMBRE OFERTA: </div>
       <div class="col-2"><input type="text"></div>
     </div>
 
-  </div>
+
+</div>
+
+
+
+

@@ -27,11 +27,14 @@ export class OfertasService {
 
   getOferta(){
     return this.getQuey()
-    .pipe(map((data: any[]) =>
-    (data.filter( item => { return item['versions']}))
-    ));
+      .pipe(map((data:any) => 
+          data.map(a => a['versions']) 
+      // .subscribe((item:any) => {        
+      //   console.log(item)
+      //   return item
+      ));
+    
   }
-
 
 
 
